@@ -14,5 +14,6 @@ func (a *App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func ApplicationHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	io.WriteString(w, r.URL.Path[1:])
+	io.WriteString(w, "Hello There!\n")
+        io.WriteString(w, r.URL.Path[1:])
 }

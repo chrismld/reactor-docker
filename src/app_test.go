@@ -17,7 +17,7 @@ func TestApplicationHandler(t *testing.T) {
 
 	handler.ServeHTTP(rr, req)
 
-	expected := ""
+	expected := "Hello There!\n"
 	if rr.Body.String() != expected {
 		t.Errorf("Sorry, the ApplicationHandler is not working, got response %v and should have %v",
 			rr.Body.String(), expected)
@@ -35,7 +35,7 @@ func TestApplicationHandlerCustom(t *testing.T) {
 
 	handler.ServeHTTP(rr, req)
 
-	expected := "hello"
+	expected := "Hello There!\nhello"
 	if rr.Body.String() != expected {
 		t.Errorf("Sorry, the ApplicationHandler is not working, got response %v and should have %v",
 			rr.Body.String(), expected)
